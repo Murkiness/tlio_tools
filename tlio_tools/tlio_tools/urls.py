@@ -18,7 +18,10 @@ from django.urls import path
 from django.conf.urls import url
 from django.views.generic import TemplateView
 
+from testdroid_tools.views import available_devices
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/free_devices/', available_devices, name="testdroid_devices"),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
 ]
