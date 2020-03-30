@@ -19,9 +19,11 @@ from django.conf.urls import url
 from django.views.generic import TemplateView
 
 from testdroid_tools.views import available_devices
+from testrail_tools.views import get_file_with_cases
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/free_devices/', available_devices, name="testdroid_devices"),
+    path('api/test_cases/', get_file_with_cases, name="test_cases"),
     url(r'^$', TemplateView.as_view(template_name='index.html')),
 ]
